@@ -26,11 +26,7 @@ public class MyController {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response post(@NotNull @Valid MyCommand command) {
-        MyDto dto = new MyDto();
-        dto.setId(1);
-        dto.setField("Field Value");
-
-        return Response.status(200).entity(dto).build();
+        return Response.status(200).build();
     }
 
 }
