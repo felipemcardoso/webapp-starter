@@ -3,9 +3,9 @@ JEE Starter Project
 - Project Structure
     - controller: Ports
     - application: Application Service Layer (thin)
-        - Command: (Input)
+        - Command: A single command (Input)
     - domain/model: Domain Logic (Fat)
-    - query/model: (Output) - DTOs (Desnomalized model)
+    - query/model: (Output) - DTOs (Denormalized model)
     - infrastructure: Persistence Implementation, Message Bus, Config, Logging, etc.
 
 - JAX-RS
