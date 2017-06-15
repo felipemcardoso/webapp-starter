@@ -7,10 +7,10 @@ import javax.servlet.ServletContextListener;
 public class ApplicationListener implements ServletContextListener {
 
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        System.out.println("contextInitialized");
+        System.out.println("ApplicationListener.contextInitialized");
     }
 
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-        System.out.println("contextDestroyed");
+        System.out.println("ApplicationListener.contextDestroyed");
     }
 }

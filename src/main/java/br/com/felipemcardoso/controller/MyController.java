@@ -20,7 +20,6 @@ public class MyController {
 
     @Inject
     public MyController(MyService myService) {
-        System.out.println(MyController.class);
         this.myService = myService;
     }
 
