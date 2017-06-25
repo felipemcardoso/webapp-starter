@@ -11,6 +11,7 @@ import javax.validation.constraints.NotNull;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Date;
 
 @Path("/my-controller")
 @Singleton
@@ -29,6 +30,18 @@ public class MyController {
         MyDto dto = new MyDto();
         dto.setId(1);
         dto.setField("Field Value");
+
+        return Response.status(200).entity(dto).build();
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/date")
+    public Response getDate() {
+        MyDto dto = new MyDto();
+        dto.setId(1);
+        dto.setField("Field Value");
+        dto.setMyDate(new Date());
 
         return Response.status(200).entity(dto).build();
     }

@@ -1,10 +1,14 @@
 package br.com.felipemcardoso.query.model;
 
+import java.util.Date;
+
 public class MyDto {
 
     private int id;
 
     private String field;
+
+    private Date myDate;
 
     public MyDto() {
     }
@@ -23,5 +27,13 @@ public class MyDto {
 
     public void setField(String field) {
         this.field = field;
+    }
+
+    public Date getMyDate() {
+        return myDate;
+    }
+
+    public void setMyDate(Date myDate) {
+        this.myDate = myDate;
     }
 }
