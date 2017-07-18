@@ -6,6 +6,8 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import javax.inject.Singleton;
+import java.util.ArrayList;
+import java.util.List;
 
 @Singleton
 public class MyServiceImpl implements MyService {
@@ -16,6 +18,8 @@ public class MyServiceImpl implements MyService {
     }
 
     public void voila() {
+        List<String> test = new ArrayList<>();
+
         System.out.println("Voila");
         logger.error("Voila Log");
     }
