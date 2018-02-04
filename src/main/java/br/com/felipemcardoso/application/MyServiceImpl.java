@@ -1,11 +1,10 @@
 package br.com.felipemcardoso.application;
 
-
-
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 import javax.inject.Singleton;
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +16,7 @@ public class MyServiceImpl implements MyService {
     public MyServiceImpl() {
     }
 
+    @Transactional
     public void voila() {
         List<String> test = new ArrayList<>();
 
