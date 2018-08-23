@@ -44,6 +44,12 @@
             <scope>provided</scope>
         </dependency>
 
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
         <!-- Jersey -->
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
@@ -92,7 +98,7 @@
                 <version>2.2</version>
                 <configuration>
                     <path>/</path>
-                    <port>8090</port>
+                    <port>8091</port>
                 </configuration>
                 <dependencies>
                     <dependency>
