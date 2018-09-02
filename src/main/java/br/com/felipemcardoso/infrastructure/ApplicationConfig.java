@@ -9,7 +9,7 @@ public class ApplicationConfig extends ResourceConfig {
         register(new ApplicationBinder());
 
         packages("br.com.felipemcardoso.controller",
-                "br.com.felipemcardoso.application",
-                "br.com.felipemcardoso.presentation");
+                 "br.com.felipemcardoso.application",
+                 "br.com.felipemcardoso.presentation");
     }
 }
