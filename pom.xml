@@ -14,7 +14,7 @@
         <jstl.version>1.2.1</jstl.version>
         <transaction.version>1.3</transaction.version>
         <jersey.version>2.17</jersey.version>
-        <slf4jVersion>1.6.1</slf4jVersion>
+        <slf4jVersion>1.7.25</slf4jVersion>
     </properties>
 
     <dependencies>
@@ -80,7 +80,7 @@
             <version>${jersey.version}</version>
         </dependency>
 
-        <!--Bean Validation -->
+        <!-- Bean Validation -->
         <dependency>
             <groupId>org.glassfish.jersey.ext</groupId>
             <artifactId>jersey-bean-validation</artifactId>
@@ -93,7 +93,7 @@
             </exclusions>
         </dependency>
 
-        <!--Sl4j -->
+        <!-- Sl4j -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -105,11 +105,12 @@
             <artifactId>slf4j-log4j12</artifactId>
             <version>${slf4jVersion}</version>
         </dependency>
+
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.16</version>
-            <scope>runtime</scope>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <version>${slf4jVersion}</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- JUnit -->
@@ -119,7 +120,6 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>

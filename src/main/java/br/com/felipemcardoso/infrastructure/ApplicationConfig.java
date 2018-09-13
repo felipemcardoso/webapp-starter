@@ -11,5 +11,7 @@ public class ApplicationConfig extends ResourceConfig {
         packages("br.com.felipemcardoso.controller",
                  "br.com.felipemcardoso.application",
                  "br.com.felipemcardoso.presentation");
+
+        System.out.println(System.getProperty("LOG_HOME"));
     }
 }
