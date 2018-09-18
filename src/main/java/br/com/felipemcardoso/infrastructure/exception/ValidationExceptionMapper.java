@@ -24,10 +24,10 @@ public class ValidationExceptionMapper implements ExceptionMapper<ConstraintViol
         StringBuilder message = new StringBuilder();
 
         for (ConstraintViolation<?> violation : e.getConstraintViolations()) {
-            message.append(violation.getMessage() + LINE_FEED);
+            message.append(violation.getMessage()).append(LINE_FEED);
         }
 
-        if(message.length() > 0) {
+        if (message.length() > 0) {
             message.delete(message.lastIndexOf(LINE_FEED), message.length());
         }
 

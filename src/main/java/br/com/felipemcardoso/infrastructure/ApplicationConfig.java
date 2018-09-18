@@ -10,7 +10,7 @@ public class ApplicationConfig extends ResourceConfig {
         register(new ValidationExceptionMapper());
 
         packages("br.com.felipemcardoso.controller",
-                 "br.com.felipemcardoso.application",
-                 "br.com.felipemcardoso.presentation");
+                "br.com.felipemcardoso.application",
+                "br.com.felipemcardoso.presentation");
     }
 }
