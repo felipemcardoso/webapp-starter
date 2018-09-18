@@ -4,7 +4,7 @@ import javax.validation.constraints.NotNull;
 
 public class MyCommand {
 
-    @NotNull
+    @NotNull(message = "{error.id.notnull}")
     private Integer id;
 
     public MyCommand() {
