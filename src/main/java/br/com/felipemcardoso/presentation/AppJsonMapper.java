@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 @Produces(MediaType.APPLICATION_JSON)
 public class AppJsonMapper implements ContextResolver<ObjectMapper> {
 
-    public static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss";
+    static final String DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss";
 
     private final ObjectMapper mapper;
 
