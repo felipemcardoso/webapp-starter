@@ -1,4 +1,4 @@
-package br.com.felipemcardoso.infrastructure.exception;
+package dev.felipemcardoso.infrastructure.exception;
 
 public class ErrorMessage {
 

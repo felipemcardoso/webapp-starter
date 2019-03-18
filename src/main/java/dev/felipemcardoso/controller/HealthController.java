@@ -1,4 +1,4 @@
-package br.com.felipemcardoso.controller;
+package dev.felipemcardoso.controller;
 
 import javax.inject.Singleton;
 import javax.ws.rs.GET;

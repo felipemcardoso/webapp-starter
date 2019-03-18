@@ -1,4 +1,4 @@
-package br.com.felipemcardoso.query.model;
+package dev.felipemcardoso.query.model;
 
 import java.util.Date;
 

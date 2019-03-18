@@ -1,4 +1,4 @@
-package br.com.felipemcardoso.controller;
+package dev.felipemcardoso.controller;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

@@ -1,4 +1,4 @@
-package br.com.felipemcardoso.infrastructure;
+package dev.felipemcardoso.infrastructure;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

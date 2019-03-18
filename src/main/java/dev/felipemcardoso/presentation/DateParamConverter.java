@@ -1,4 +1,4 @@
-package br.com.felipemcardoso.presentation;
+package dev.felipemcardoso.presentation;
 
 
 import javax.ws.rs.WebApplicationException;

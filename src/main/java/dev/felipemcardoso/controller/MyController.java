@@ -1,8 +1,8 @@
-package br.com.felipemcardoso.controller;
+package dev.felipemcardoso.controller;
 
-import br.com.felipemcardoso.application.MyCommand;
-import br.com.felipemcardoso.application.MyService;
-import br.com.felipemcardoso.query.model.MyDto;
+import dev.felipemcardoso.application.MyCommand;
+import dev.felipemcardoso.application.MyService;
+import dev.felipemcardoso.query.model.MyDto;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

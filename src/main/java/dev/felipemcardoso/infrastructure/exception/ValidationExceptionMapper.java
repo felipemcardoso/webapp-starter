@@ -1,4 +1,4 @@
-package br.com.felipemcardoso.infrastructure.exception;
+package dev.felipemcardoso.infrastructure.exception;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;

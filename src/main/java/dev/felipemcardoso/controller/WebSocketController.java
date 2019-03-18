@@ -1,4 +1,4 @@
-package br.com.felipemcardoso.controller;
+package dev.felipemcardoso.controller;
 
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;

@@ -1,6 +1,6 @@
-package br.com.felipemcardoso.infrastructure;
+package dev.felipemcardoso.infrastructure;
 
-import br.com.felipemcardoso.infrastructure.exception.ValidationExceptionMapper;
+import dev.felipemcardoso.infrastructure.exception.ValidationExceptionMapper;
 import org.glassfish.jersey.server.ResourceConfig;
 
 public class ApplicationConfig extends ResourceConfig {

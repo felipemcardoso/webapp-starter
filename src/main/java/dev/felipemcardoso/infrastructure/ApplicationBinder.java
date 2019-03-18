@@ -1,7 +1,7 @@
-package br.com.felipemcardoso.infrastructure;
+package dev.felipemcardoso.infrastructure;
 
-import br.com.felipemcardoso.application.MyService;
-import br.com.felipemcardoso.application.MyServiceImpl;
+import dev.felipemcardoso.application.MyService;
+import dev.felipemcardoso.application.MyServiceImpl;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 
 import javax.inject.Singleton;

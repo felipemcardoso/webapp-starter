@@ -1,4 +1,4 @@
-package br.com.felipemcardoso.application;
+package dev.felipemcardoso.application;
 
 
 import org.slf4j.Logger;

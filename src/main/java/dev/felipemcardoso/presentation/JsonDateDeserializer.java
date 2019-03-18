@@ -1,4 +1,4 @@
-package br.com.felipemcardoso.presentation;
+package dev.felipemcardoso.presentation;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
