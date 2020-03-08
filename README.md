@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/felipemcardoso/webapp-starter.svg?branch=master)](https://travis-ci.org/felipemcardoso/webapp-starter)
+
 JEE Starter Project
 
 - Project Structure
