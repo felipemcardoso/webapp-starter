@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/felipemcardoso/webapp-starter.svg?branch=master)](https://travis-ci.org/felipemcardoso/webapp-starter)
+[![Build Status](https://travis-ci.com/felipemcardoso/webapp-starter.svg?branch=master)](https://travis-ci.com/felipemcardoso/webapp-starter)
 
 JEE Starter Project
 
