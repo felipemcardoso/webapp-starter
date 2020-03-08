@@ -9,8 +9,11 @@ public class ApplicationFilter implements Filter {
         System.out.println("ApplicationFilter.init");
     }
 
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println("ApplicationFilter.doFilter");
+    public void doFilter(ServletRequest servletRequest,
+                         ServletResponse servletResponse,
+                         FilterChain filterChain) throws IOException, ServletException {
+
+        System.out.println("Filter");
         filterChain.doFilter(servletRequest, servletResponse);
     }
 

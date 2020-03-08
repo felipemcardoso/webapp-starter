@@ -10,8 +10,6 @@ import javax.ws.rs.ext.Provider;
 @Provider
 public class ValidationExceptionMapper implements ExceptionMapper<ConstraintViolationException> {
 
-    private static String LINE_FEED = "\n\r";
-
     @Override
     public Response toResponse(ConstraintViolationException e) {
         return Response.status(Response.Status.BAD_REQUEST)
@@ -24,11 +22,11 @@ public class ValidationExceptionMapper implements ExceptionMapper<ConstraintViol
         StringBuilder message = new StringBuilder();
 
         for (ConstraintViolation<?> violation : e.getConstraintViolations()) {
-            message.append(violation.getMessage()).append(LINE_FEED);
+            message.append(violation.getMessage()).append(System.lineSeparator());
         }
 
         if (message.length() > 0) {
-            message.delete(message.lastIndexOf(LINE_FEED), message.length());
+            message.delete(message.lastIndexOf(System.lineSeparator()), message.length());
         }
 
         return message.toString();

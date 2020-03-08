@@ -1,4 +1,4 @@
-package dev.felipemcardoso.application;
+package dev.felipemcardoso.application.service;
 
 import javax.validation.constraints.NotNull;
 
@@ -8,6 +8,7 @@ public class MyCommand {
     private Integer id;
 
     public MyCommand() {
+
     }
 
     public int getId() {

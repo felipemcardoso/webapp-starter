@@ -1,7 +1,7 @@
 package dev.felipemcardoso.controller;
 
-import dev.felipemcardoso.application.MyCommand;
 import dev.felipemcardoso.application.MyService;
+import dev.felipemcardoso.application.service.MyCommand;
 import dev.felipemcardoso.query.model.MyDto;
 
 import javax.inject.Inject;
@@ -27,6 +27,8 @@ public class MyController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response get() {
+        myService.voila();
+
         MyDto dto = new MyDto();
         dto.setId(1);
         dto.setField("Field Value");
@@ -55,5 +57,4 @@ public class MyController {
 
         return Response.status(200).build();
     }
-
 }

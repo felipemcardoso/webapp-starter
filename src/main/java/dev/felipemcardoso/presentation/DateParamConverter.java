@@ -1,6 +1,5 @@
 package dev.felipemcardoso.presentation;
 
-
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.ext.ParamConverter;
 import java.text.SimpleDateFormat;
@@ -23,7 +22,6 @@ public class DateParamConverter implements ParamConverter<Date> {
             throw new WebApplicationException(ex.getMessage(), 400);
         }
     }
-
 
     public String toString(Date date) {
         return new SimpleDateFormat(AppJsonMapper.DATE_FORMAT).format(date);
