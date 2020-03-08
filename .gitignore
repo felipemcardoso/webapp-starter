@@ -3,3 +3,6 @@ logs
 .DS_Store
 .idea/
 web-app.iml
+/.idea
+/out
+/target
