@@ -4,6 +4,7 @@
     <id>assembly</id>
     <formats>
         <format>dir</format>
+        <format>zip</format>
     </formats>
     <fileSets>
         <fileSet>
