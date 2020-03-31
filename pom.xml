@@ -5,7 +5,7 @@
     <artifactId>web-starter</artifactId>
     <packaging>jar</packaging>
     <version>1.0</version>
-    <name>web-start</name>
+    <name>web-starter</name>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -112,6 +112,7 @@
                                 <delete dir="${project.build.directory}/archive-tmp"/>
                                 <delete dir="${project.build.directory}/maven-archiver"/>
                                 <delete dir="${project.build.directory}/war-plugin"/>
+                                <delete file="${project.build.directory}/${project.name}-${project.version}.jar"/>
                             </target>
                         </configuration>
                     </execution>
@@ -220,7 +221,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>RELEASE</version>
+            <version>4.13</version>
             <scope>test</scope>
         </dependency>
 
