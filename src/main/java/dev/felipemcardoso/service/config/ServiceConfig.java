@@ -1,20 +1,32 @@
 package dev.felipemcardoso.service.config;
 
+import javax.inject.Singleton;
 import java.io.File;
 
+@Singleton
 public final class ServiceConfig {
 
-    private static final String DEFAULT_CONTEXT = "";
+    private static final String DOMAIN = "DOMAIN";
     private static final String DEFAULT_PORT = "8080";
+    private static final String DEFAULT_CONTEXT = "";
 
-    private ServiceDomain domain;
+    private static ServiceConfig instance;
 
-    private ServiceConfig(String[] args) {
-        this.domain = getDomain(args);
+    private final ServiceDomain domain;
+
+    private ServiceConfig(String domain) {
+        if (domain == null) {
+            this.domain = ServiceDomain.DEVO;
+        } else {
+            this.domain = ServiceDomain.valueOf(domain.toUpperCase());
+        }
     }
 
-    public static ServiceConfig newInstance(String[] args) {
-        return new ServiceConfig(args);
+    public static ServiceConfig getInstance() {
+        if (instance == null) {
+            instance = new ServiceConfig(System.getProperty(DOMAIN));
+        }
+        return instance;
     }
 
     public int port() {
@@ -32,18 +44,18 @@ public final class ServiceConfig {
     }
 
     public String docBase() {
-        if (isProd()) {
-            return System.getProperty("basedir") + this.domain.docBase();
-        } else {
+        if (isDevo()) {
             return new File(this.domain.docBase()).getAbsolutePath();
+        } else {
+            return System.getProperty("basedir") + this.domain.docBase();
         }
     }
 
     public String webInf() {
-        if (isProd()) {
-            return System.getProperty("basedir") + this.domain.webInfClasses();
-        } else {
+        if (this.domain.isDevo()) {
             return new File(this.domain.webInfClasses()).getAbsolutePath();
+        } else {
+            return System.getProperty("basedir") + this.domain.webInfClasses();
         }
     }
 
@@ -51,17 +63,11 @@ public final class ServiceConfig {
         return this.domain.webInf();
     }
 
-    private boolean isProd() {
-        return ServiceDomain.PROD.equals(this.domain);
+    public ServiceDomain domain() {
+        return this.domain;
     }
 
-    private static ServiceDomain getDomain(String[] args) {
-        for (String arg : args) {
-            if (ServiceDomain.PROD.name().equals(arg)) {
-                return ServiceDomain.PROD;
-            }
-        }
-        return ServiceDomain.DEVO;
-
+    private boolean isDevo() {
+        return ServiceDomain.DEVO.equals(this.domain);
     }
 }

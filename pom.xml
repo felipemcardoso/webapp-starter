@@ -19,6 +19,24 @@
         <tomcat.version>8.5.51</tomcat.version>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>beta</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <domain>beta</domain>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <domain>prod</domain>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
             <!-- WAR Packing -->
@@ -55,11 +73,9 @@
                         <program>
                             <id>${project.name}</id>
                             <mainClass>dev.felipemcardoso.Service</mainClass>
-                            <commandLineArguments>
-                                <commandLineArgument>PROD</commandLineArgument>
-                            </commandLineArguments>
                             <jvmSettings>
                                 <systemProperties>
+                                    <systemProperty>DOMAIN="${domain}"</systemProperty>
                                     <systemProperty>LOG_HOME="$BASEDIR"</systemProperty>
                                 </systemProperties>
                             </jvmSettings>

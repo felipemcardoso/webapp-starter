@@ -10,19 +10,26 @@ import org.apache.catalina.webresources.StandardRoot;
 public class Service {
 
     public static void main(String[] args) throws Exception {
-        ServiceConfig config = ServiceConfig.newInstance(args);
+        ServiceConfig config = ServiceConfig.getInstance();
 
         Tomcat tomcat = new Tomcat();
         tomcat.setPort(config.port());
 
         Context serviceContext = tomcat.addWebapp(config.context(), config.docBase());
         WebResourceRoot webResourceRoot = createWebResource(config.webAppMount(), config.webInf(), serviceContext);
-
         serviceContext.setResources(webResourceRoot);
 
-        System.out.println(String.format("Starting Service at port %s", config.port()));
+        printServiceDescription(config);
+
         tomcat.start();
         tomcat.getServer().await();
+    }
+
+    private static void printServiceDescription(ServiceConfig config) {
+        System.out.println("###################################");
+        System.out.println(String.format("- Starting Service at port %s", config.port()));
+        System.out.println(String.format("- Domain: %s", config.domain()));
+        System.out.println("###################################");
     }
 
     private static WebResourceRoot createWebResource(String webAppMount, String webInf, Context serviceContext) {

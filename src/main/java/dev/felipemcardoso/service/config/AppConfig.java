@@ -13,6 +13,28 @@ public final class AppConfig {
 
     private Properties properties;
 
+    private static void processConfigEntries(Properties config) {
+
+        for (String propertyName : config.stringPropertyNames()) {
+            String value = config.getProperty(propertyName);
+
+            if (isParam(value)) {
+                String newValue = System.getProperty(extractConfigValue(value));
+                if (newValue != null) {
+                    config.setProperty(propertyName, newValue);
+                }
+            }
+        }
+    }
+
+    private static boolean isParam(String propertyName) {
+        return propertyName.contains("$");
+    }
+
+    private static String extractConfigValue(String value) {
+        return value.substring(2, value.length() - 1);
+    }
+
     public String find(String key) {
         if (properties == null) {
             properties = loadConfig();
@@ -35,27 +57,5 @@ public final class AppConfig {
         } catch (IOException e) {
             throw new AppConfigException(String.format("Error processing file %s.", CONFIG_FILE));
         }
-    }
-
-    private static void processConfigEntries(Properties config) {
-
-        for (String propertyName : config.stringPropertyNames()) {
-            String value = config.getProperty(propertyName);
-
-            if (isParam(value)) {
-                String newValue = System.getProperty(extractConfigValue(value));
-                if (newValue != null) {
-                    config.setProperty(propertyName, newValue);
-                }
-            }
-        }
-    }
-
-    private static boolean isParam(String propertyName) {
-        return propertyName.contains("$");
-    }
-
-    private static String extractConfigValue(String value) {
-        return value.substring(2, value.length() - 1);
     }
 }

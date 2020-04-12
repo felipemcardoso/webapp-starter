@@ -31,7 +31,7 @@ public class MyController {
 
         MyDto dto = new MyDto();
         dto.setId(1);
-        dto.setField("Field Value");
+        dto.setField("Field");
 
         return Response.status(200).entity(dto).build();
     }

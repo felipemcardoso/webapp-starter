@@ -1,6 +1,7 @@
 package dev.felipemcardoso.webstarter.application.service;
 
 import dev.felipemcardoso.service.config.AppConfig;
+import dev.felipemcardoso.service.config.ServiceConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,14 +16,19 @@ class MyService implements dev.felipemcardoso.webstarter.application.MyService {
 
     private final AppConfig appConfig;
 
+    private final ServiceConfig serviceConfig;
+
     @Inject
-    public MyService(AppConfig appConfig) {
+    public MyService(AppConfig appConfig, ServiceConfig serviceConfig) {
         this.appConfig = appConfig;
+        this.serviceConfig = serviceConfig;
     }
 
     @Transactional
     public void voila() {
         System.out.println(appConfig.find("version.number"));
+        System.out.println(String.format("Domain: %s", serviceConfig.domain()));
+        System.out.println(String.format("Port: %s", serviceConfig.port()));
         log.info("Voila Log");
     }
 }

@@ -9,5 +9,6 @@ public class ConfigBinder extends AbstractBinder {
     @Override
     protected void configure() {
         bind(AppConfig.class).to(AppConfig.class).in(Singleton.class);
+        bindFactory(ServiceConfigFactory.class).to(ServiceConfig.class).in(Singleton.class);
     }
 }

@@ -3,6 +3,7 @@ package dev.felipemcardoso.service.config;
 enum ServiceDomain {
 
     DEVO("src/main/webapp/", "target/classes", "/WEB-INF/classes"),
+    BETA("/webapp/", "/webapp/WEB-INF/classes", "/webapp/WEB-INF/classes"),
     PROD("/webapp/", "/webapp/WEB-INF/classes", "/webapp/WEB-INF/classes");
 
     private final String docBase;
@@ -17,15 +18,19 @@ enum ServiceDomain {
         this.webInf = webInf;
     }
 
-    public String docBase() {
+    String docBase() {
         return docBase;
     }
 
-    public String webInfClasses() {
+    String webInfClasses() {
         return webInfClasses;
     }
 
-    public String webInf() {
+    String webInf() {
         return webInf;
+    }
+
+    public boolean isDevo() {
+        return DEVO.equals(this);
     }
 }
