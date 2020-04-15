@@ -1,9 +1,7 @@
 target
 logs
-.DS_Store
 .idea/
-web-app.iml
-/.idea
-/out
-/target
+out
+.DS_Store
+*.iml
 tomcat.*
