@@ -15,16 +15,12 @@ public final class ServiceConfig {
     private final ServiceDomain domain;
 
     private ServiceConfig(String domain) {
-        if (domain == null) {
-            this.domain = ServiceDomain.DEVO;
-        } else {
-            this.domain = ServiceDomain.valueOf(domain.toUpperCase());
-        }
+        this.domain = ServiceDomain.valueOf(domain.toUpperCase());
     }
 
     public static ServiceConfig getInstance() {
         if (instance == null) {
-            instance = new ServiceConfig(System.getProperty(DOMAIN));
+            instance = new ServiceConfig(System.getProperty(DOMAIN, ServiceDomain.DEVO.name()));
         }
         return instance;
     }

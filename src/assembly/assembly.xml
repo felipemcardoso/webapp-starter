@@ -32,4 +32,11 @@
         </fileSet>
     </fileSets>
 
+    <files>
+        <file>
+            <source>appspec.yml</source>
+            <outputDirectory></outputDirectory>
+            <filtered>true</filtered>
+        </file>
+    </files>
 </assembly>

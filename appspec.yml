@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /opt/web-start
+hooks:
+  ApplicationStart:
+    - location: bin/web-starter
+      timeout: 300
+      runas: ec2-user
