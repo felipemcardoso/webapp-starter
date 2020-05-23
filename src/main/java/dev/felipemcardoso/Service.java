@@ -13,6 +13,7 @@ public class Service {
         ServiceConfig config = ServiceConfig.getInstance();
 
         Tomcat tomcat = new Tomcat();
+        tomcat.getConnector();
         tomcat.setPort(config.port());
 
         Context serviceContext = tomcat.addWebapp(config.context(), config.docBase());
