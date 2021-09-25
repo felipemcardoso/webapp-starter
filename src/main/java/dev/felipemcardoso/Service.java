@@ -28,8 +28,8 @@ public class Service {
 
     private static void printServiceDescription(ServiceConfig config) {
         System.out.println("###################################");
-        System.out.println(String.format("- Starting Service at port %s", config.port()));
-        System.out.println(String.format("- Domain: %s", config.domain()));
+        System.out.printf("- Starting Service at port %s%n", config.port());
+        System.out.printf("- Domain: %s%n", config.domain());
         System.out.println("###################################");
     }
 

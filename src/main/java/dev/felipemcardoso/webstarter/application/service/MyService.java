@@ -12,7 +12,7 @@ import javax.transaction.Transactional;
 @Singleton
 class MyService implements dev.felipemcardoso.webstarter.application.MyService {
 
-    private static Logger log = LoggerFactory.getLogger(MyService.class);
+    private static final Logger log = LoggerFactory.getLogger(MyService.class);
 
     private final AppConfig appConfig;
 
@@ -27,8 +27,8 @@ class MyService implements dev.felipemcardoso.webstarter.application.MyService {
     @Transactional
     public void voila() {
         System.out.println(appConfig.find("version.number"));
-        System.out.println(String.format("Domain: %s", serviceConfig.domain()));
-        System.out.println(String.format("Port: %s", serviceConfig.port()));
+        System.out.printf("Domain: %s%n", serviceConfig.domain());
+        System.out.printf("Port: %s%n", serviceConfig.port());
         log.info("Voila Log");
     }
 }
